@@ -21,8 +21,14 @@ import ChatComponent_2 from "./components/articles/ChatComponent_2";
 import DynamicTableArray from "./components/articles/DynamicTableArray";
 import Successpayment from "./client/Successpayment";
 import Listarticlespagination from "./components/articles/Listarticlespagination";
-
-
+import AuthForm from "./components/authentification/login";
+import Dashboard from './components/admin/dashboard';
+import Logout from './components/authentification/logout'
+import NavBarComponent from "./components/authentification/Navbar";
+import RegisterForm from "./components/authentification/register";
+import ProtectedRoutes from "./ProtectedRoute";
+import ListCategories from "./ListCategories";
+import Headers from "./components/articles/Headers";
 
 function App() {
 return (
@@ -34,9 +40,16 @@ return (
 <Router>
 
 <Menu/>
+<NavBarComponent/>
 
 
 <Routes>
+
+
+    <Route path="/articlescard" element={<Listarticlescard />}/>
+
+
+    <Route element={<ProtectedRoutes/>}>
 <Route path="/articles" element={<Listarticles/>}/>
 <Route path="/articles/add" element={<Insertarticle/>}/>
 <Route path="/article/edit/:id" element={<Editarticle/>}/>
@@ -49,7 +62,6 @@ return (
 <Route path="/scategories/add" element={<Insertscategorie/>}/>
 <Route path="/scategories/edit/:id" element={<Editscategorie/>}/>
 
-<Route path="/articlescard" element={<Listarticlescard />}/>
 
 <Route path='/cart' element={<Cart/>}/>
 
@@ -62,9 +74,25 @@ return (
 
 <Route path="/successPayment" element={<Successpayment/>}/>
 <Route path="/artpage" element={<Listarticlespagination/>}/>
+<Route path="/listcat" element={<ListCategories/>}/>
+<Route path="/headers" element={<Headers/>}/>
 
 
 
+
+
+
+
+
+
+<Route path="/dashboard" element={<Dashboard/>}/>
+
+</Route>
+<Route path="/login" element={<AuthForm/>}/>
+
+
+<Route path="/logout" element={<Logout/>}/>
+<Route path="/register" element={<RegisterForm/>}/>
 
 
 </Routes>

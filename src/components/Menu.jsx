@@ -18,7 +18,7 @@ const StyledBadge = styled(Badge)(({ theme }) => ({
   }));
 
 const Menu = () => {
-  const cartCount = 0; //  changer cette valeur pour voir le badge
+  const cartCount = 1; //  changer cette valeur pour voir le badge
 
   return (
     <Navbar bg="primary" variant="dark" expand="lg" className="px-3">
@@ -32,6 +32,12 @@ const Menu = () => {
           <Nav.Link as={Link} to="/chat">ChatBot</Nav.Link>
          <Nav.Link as={Link} to="/chat_2">ChatBot_2</Nav.Link>
          <Nav.Link as={Link} to="/artpage">Articles page</Nav.Link>
+                  <Nav.Link as={Link} to="/login">login</Nav.Link>
+                  <Nav.Link as={Link} to="/dashboard">dashboard</Nav.Link>
+                  <Nav.Link as={Link} to="/logout">logout</Nav.Link>
+                  <Nav.Link as={Link} to="/listcat">listcat</Nav.Link>
+
+
 
 
 
